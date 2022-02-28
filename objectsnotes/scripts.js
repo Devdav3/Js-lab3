@@ -23,7 +23,7 @@ function addSubmission(array, newName, newScore, newDate) {
   console.log(submissions);
 }
 
-// addSubmission(submissions, "David", 85, "2022-02-23");
+// addSubmission(submissions, "David", 25, "2022-02-23");
 // addSubmission(submissions, "kyle", 55, "2022-02-23");
 
 function deleteSubmissionByIndex(array, index) {
@@ -77,15 +77,26 @@ function findLowestScore(array) {
 // findLowestScore(submissions); option 2***
 
 function findAverageScore(array) {
-  let average = 0;
-  // let sum = 0;
-  for (let i = 0; i < array.length; i++) {
-    let currentNum = array[i].score;
-    average += currentNum;
-  }
-  average = average / array.length; 
-  return average;
+let average = 0;
+for (let people of array){
+  let currentNum = people.score;
+  average += currentNum;
 }
+average = average / array.length;
+return average; 
+}
+console.log(findAverageScore(submissions));
+
+// *** Below is for a For loop not For of loop
+//   let average = 0;
+//   // let sum = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     let currentNum = array[i].score;
+//     average += currentNum;
+//   }
+//   average = average / array.length; 
+//   return average;
+// }
 
 // console.log(findAverageScore(submissions));
 
